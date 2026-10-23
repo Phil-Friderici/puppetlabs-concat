@@ -8,7 +8,8 @@ on:
     
 jobs:
   Spec:
-    uses: "puppetlabs/cat-github-actions/.github/workflows/module_ci.yml@main"
+    uses: "Phil-Friderici/cat-github-actions/.github/workflows/module_ci.yml@debug"
+    # uses: "puppetlabs/cat-github-actions/.github/workflows/module_ci.yml@main"
     with:
       flags: "--nightly"
       # voxpupuli-puppet-lint-plugins 7.0 (needed for Puppet 9 support) requires
@@ -21,7 +22,8 @@ jobs:
 
   Acceptance:
     needs: Spec
-    uses: "puppetlabs/cat-github-actions/.github/workflows/module_acceptance.yml@main"
+    uses: "Phil-Friderici/cat-github-actions/.github/workflows/module_acceptance.yml@debug"
+    #uses: "puppetlabs/cat-github-actions/.github/workflows/module_acceptance.yml@main"
     with:
       # MODULES-11714: these platforms have no puppet9-nightly package published on the
       # internal artifactory nightly feed (404 on install), so the Puppet 9 lane can't be
